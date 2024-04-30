@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<title>Scientific Number Accepter</title>
+	<script>
+		function validateInput() {
+			var input = document.getElementById("numberInput").value.trim();
+			
+			if (input === "") {
+				alert("Please enter a number.");
+				return;
+			}
+			
+			var regex = /^[-+]?(\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?$/;
+			if (regex.test(input)) {
+				alert("Valid scientific number: " + input);
+			} else {
+				alert("Invalid input. Please enter a scientific number.");
+			}
+		}
+	</script>
+</head>
+<style>
+    body {
+      background-image:url("Mwah.png");
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      background-size:100% 100%;
+    }
+  </style>
+<body>
+<center>
+	<h1>Scientific Number Accepter</h1>
+	<p>Nama : Gabriell C. A. Taroreh <br>
+	NIM : 221011060112 <br> </p>
+	<input type="text" id="numberInput" placeholder="Enter a scientific number">
+	<button onclick="validateInput()">Validate</button>
+	
+	<script>
+		document.getElementById("numberInput").addEventListener("keydown", function(event) {
+			if (event.key === "Enter") {
+				validateInput();
+			}
+		});
+	</script>
+</center>
+</body>
+</html>
